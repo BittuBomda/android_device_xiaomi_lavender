@@ -12,12 +12,21 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, vendor/cherish/config/common_full_phone.mk)
 
 TARGET_BOOT_ANIMATION_RES := 1080
-WITH_GMS := true
+TARGET_GAPPS_ARCH := arm64
 TARGET_SUPPORTS_GOOGLE_RECORDER := false
 TARGET_INCLUDE_STOCK_ACORE := false
 TARGET_INCLUDE_LIVE_WALLPAPERS := false
+
+# Quick Tap
 TARGET_SUPPORTS_QUICK_TAP := true
 
+# Face Unlock
+TARGET_FACE_UNLOCK_SUPPORTED := true
+
+# Cherish OS Stuff
+CHERISH_BUILD_TYPE := UNOFFICIAL
+CHERISH_BUILD_VARIANT := Gapps
+WITH_GMS := true
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.cherish.maintainer=S8M1T
 
